@@ -1,0 +1,22 @@
+{
+  "name": "east-rethink",
+  "description": "rethinkdb adapter for \"east\" (node.js database migration tool)",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sonyahogan/east-rethink.git"
+  },
+  "main": "./lib/adapter",
+  "keywords": [
+    "database",
+    "db",
+    "migrate",
+    "rethinkdb"
+  ],
+  "dependencies": {
+    "penseur": "^2.3.x"
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.3.0"
+  }
+}
