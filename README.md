@@ -31,7 +31,7 @@ create `.eastrc` file at current directory
 
 ```js
 {
-    "adapter": "../east-rethink",
+    "adapter": "east-rethink",
     "tables": ["card", "group", "user"],
     "database": {
         "name": "mydatabase",
