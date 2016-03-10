@@ -14,7 +14,7 @@
     "rethinkdb"
   ],
   "dependencies": {
-    "penseur": "^2.3.x"
+    "penseur": "4.x.x"
   },
   "devDependencies": {
     "eslint-config-google": "^0.3.0"
