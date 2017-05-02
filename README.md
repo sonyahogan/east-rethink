@@ -35,6 +35,7 @@ create `.eastrc` file at current directory
     "tables": ["card", "group", "user"],
     "database": {
         "name": "mydatabase",
+        "migrationTable": "mymigrationtable",
         "connection": {
             "host": "localhost",
             "port": 28015
@@ -45,7 +46,7 @@ create `.eastrc` file at current directory
 
 where 
 * `tables` is an array of the tables you wish to connect to in your database.
-* `database` is a json object with the following properties: `name` - database name, `connection` - a json object with `host` and `port` providing the host name and port number for your database respectively.
+* `database` is a json object with the following properties: `name` - database name, `migrationTable` - migration table name (optional - defaults to 'migration'), `connection` - a json object with `host` and `port` providing the host name and port number for your database respectively.
 
 now we can create some migrations
 
