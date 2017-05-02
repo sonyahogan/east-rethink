@@ -1,7 +1,7 @@
 {
   "name": "east-rethink",
   "description": "rethinkdb adapter for \"east\" (node.js database migration tool)",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/sonyahogan/east-rethink.git"
