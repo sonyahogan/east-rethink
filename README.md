@@ -1,6 +1,6 @@
 # east rethink
 
-rethinkdb adapter for [east](https://github.com/okv/east) (node.js database migration tool) which uses 
+rethinkdb adapter for [east](https://github.com/okv/east) (node.js database migration tool) which uses
 [pensuer](https://github.com/hueniverse/penseur)
 
 All executed migrations names will be stored at `migrations` table in the
@@ -44,7 +44,7 @@ create `.eastrc` file at current directory
 }
 ```
 
-where 
+where
 * `tables` is an array of the tables you wish to connect to in your database.
 * `database` is a json object with the following properties: `name` - database name, `migrationTable` - migration table name (optional - defaults to 'migration'), `connection` - a json object with `host` and `port` providing the host name and port number for your database respectively.
 
@@ -76,23 +76,16 @@ to 1_apples
 ```js
 exports.migrate = function(client, done) {
     var db = client.db;
-    db.card.insert( { id: 1, type: 'apple', color: 'red' }, (err, results) => {
 
-        if (err) return done(err);
-
-        return done(null);
-    });
+    db.card.insert( { id: 'red-apple', type: 'apple', color: 'red' })
+        .then(() => done(null), done);
 };
 
 exports.rollback = function(client, done) {
     var db = client.db;
 
-    db.card.remove({ id: 1 }, (err) => {
-
-        if (err) return done(err);
-
-        return done(null);
-    });
+    db.card.remove({ id: 1 })
+        .then(() => done(null), done);
 };
 ```
 
@@ -101,12 +94,8 @@ to 2_bananas
 ```js
 exports.migrate = function(client, done) {
     var db = client.db;
-    db.card.insert( { id: 2, type: 'banana', color: 'yellow' }, (err, results) => {
-
-        if (err) return done(err);
-
-        return done(null);
-    });
+    db.card.insert( { id: 2, type: 'banana', color: 'yellow' })
+        .then(() => done(null), done);
 };
 
 exports.rollback = function(client, done) {
